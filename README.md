@@ -1,5 +1,5 @@
 2024/3/19新規作成<br>
-(READMEでは3つの追加項目に関わる部分のみ記載いたします。)<br>
+(READMEでは3つの追加項目に関わる部分を抜粋いたします。)<br>
 
 # アプリケーション名
 Rese（飲食店予約サービス）
@@ -18,7 +18,7 @@ http://localhost:8080/
 
 ## 他のリポジトリ  
 他の機能に関しましては、上級模擬案件提出用のリポジトリ「Rese」のREADMEに記載がございます。
-[無し](https://github.com/tmdressage/rese.git)
+[(https://github.com/tmdressage/rese.git)](https://github.com/tmdressage/rese.git)
 
 ## 機能一覧
 **Proテスト用の追加実装機能**<br>
@@ -30,18 +30,20 @@ http://localhost:8080/
 ## 使用技術（実行環境）
 OS：Linux（Ubuntu）<br>
 環境：Docker Desktop v4.23.0<br>
-言語：PHP 8.1.0（7.4.9からアップデート）、JQuery 3.7.1<br>
+言語：PHP 8.1.0、JQuery 3.7.1<br>
 フレームワーク：Laravel 8<br>
 DB：mysql 8.0.26<br>
 WEBサーバソフトウェア：nginx 1.21.1<br>
 エディタ：VSCode 1.84.0<br>
 
 ## テーブル設計
-
+![Screenshot 2024-03-19 225159](https://github.com/tmdressage/Pro-test/assets/144135026/0fcd04cc-40f0-4222-9a6e-59477a1f4f2f)
+※大変恐縮ながら、上級模擬案件の採点でご指摘を受けた箇所はまだ修正出来ておりません。
+※Reviewsテーブルは上級模擬案件で実装した際に使用したテーブルで、今回はそれとは別にRatingテーブルを作成して機能を実装いたしました。
 
 ## ER図
-
-
+![rese](https://github.com/tmdressage/Pro-test/assets/144135026/728e3a08-3885-4fed-bb37-9369ec9b100c)
+※大変恐縮ながら、上級模擬案件の採点でご指摘を受けた箇所はまだ修正出来ておりません。
 
 ## 環境構築
 **1、リポジトリの設定**<br>
@@ -225,8 +227,14 @@ $ php artisan db:seed
 $ php artisan storage:link
 $ exit
 ```
-
 ※飲食店情報の新規作成時に、アップロードした画像を表示させるために行います。
+<br>
+<br>
+※2024/3/19追記※<br>
+CSVインポート機能実装の為にLaravelExcelをインストールしたところ、<br>
+PHPのバージョンが合わないのでアップデートしてほしい旨のエラーが出るようになりましたので、<br>
+docker/php/Dockerfileのphpバージョンを7.4.9から8.1.0に変更して<br>
+$ docker-compose up -d --build でDockerを立ち上げ直しました。<br>
 <br>
 <br>
 <br>
@@ -264,6 +272,8 @@ Permission denied」<br>
 <br>
 **csvインポート機能**<br>
 <br>
+※Laravel Excelをインストールして実装いたしました。
+<br>
 ⇒管理者ユーザのCsvImportを開くとcsvインポート画面に遷移いたします。
 <br>
 ![Screenshot 2024-03-19 215627](https://github.com/tmdressage/Pro-test/assets/144135026/f53a0081-e86a-45aa-a8f0-79ec0670a8bf)<br>
@@ -271,11 +281,26 @@ Permission denied」<br>
 ![Screenshot 2024-03-19 215750](https://github.com/tmdressage/Pro-test/assets/144135026/b837b0a4-54df-4d89-9753-9ba6b92d988b)<br>
 <br>
 <br>
-⇒csvファイルの記述方法は以下の通りです。<br>
+⇒csvファイルの記述方法は以下をご参照ください。<br>
 <br>
 ![Screenshot 2024-03-19 222834](https://github.com/tmdressage/Pro-test/assets/144135026/11cd91c5-338b-41c8-9973-5e0a48143efa)<br>
 <br>
-
+１． 空のSCVファイルを開き、1行目にヘッダー行を作成します。<br>
+　　 1行目のA～E列に、それぞれ「店舗名」、「画像URL」、「地域」、「ジャンル」、「店舗概要」と入力します。<br>
+　 　※上記の通りでなくとも、各項目が分かるような項目名であればOKです。<br>
+　 　※1行目はヘッダー行のためインポート時には読み取られません。<br>
+<br>
+2．  作成したヘッダー行の各項目に沿って、 2行目以降に飲食店情報を入力していきます。<br>
+     入力の際の注意事項は以下の通りです。<br>
+　    A列「店舗名」　：50文字以内で入力<br>
+　    B列「画像URL」 ：Jpegまたはpngの画像URLのみアップロード可能<br>
+　    C列「地域」　　：「東京都」「大阪府」「福岡県」のいずれかを入力<br>
+　    D列「ジャンル」：「寿司」「焼肉」「イタリアン」「居酒屋」「ラーメン」のいずれかを入力<br>
+　    E列「店舗概要」：400文字以内で入力<br>
+　　※各項目は全て必須項目です。いずれかに空欄があると読み取られません。<br>
+<br>
+⇒必要事項を入力・上書き保存したSCVファイルを、先述のインポート画面にインポートいただくと、飲食店情報が新規作成されます。
+<br>
 <br>
 以上でございます。<br>
 拙い点が多々ございますが、ご採点の程よろしくお願い申し上げます。<br>
