@@ -1,5 +1,5 @@
 .reservation-status__login-name {
-    max-width: 1000px;
+    width: 700px;
     margin: 0 auto;
 }
 
@@ -12,10 +12,10 @@
 }
 
 .reservation-status__title {
-    max-width: 1000px;
+    width: 700px;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: center;    
 }
 
 .back-button {

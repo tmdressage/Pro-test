@@ -29,12 +29,15 @@
                         <li class="menu-list"><a class="menu-text" href="/logout">Logout</a></li>
                         <li class="menu-list"><a class="menu-text" href="/mypage">Mypage</a></li>
                         @elsecan('admin')
-                        <li class="menu-list"><a class="menu-text" href="/admin">Registration</a></li>
+                        <li class="menu-list"><a class="menu-text" href="/">Home</a></li>
                         <li class="menu-list"><a class="menu-text" href="/logout">Logout</a></li>
+                        <li class="menu-list"><a class="menu-text" href="/admin">OwnerRegistration</a></li>
+                        <li class="menu-list"><a class="menu-text" href="/import">CsvImport</a></li>
                         @elsecan('owner')
-                        <li class="menu-list"><a class="menu-text" href="/owner">Registration/Edition</a></li>
-                        <li class="menu-list"><a class="menu-text" href="/reservation/status">Reservation Status</a></li>
+                        <li class="menu-list"><a class="menu-text" href="/">Home</a></li>
                         <li class="menu-list"><a class="menu-text" href="/logout">Logout</a></li>
+                        <li class="menu-list"><a class="menu-text" href="/owner">ShopRegistration</a></li>
+                        <li class="menu-list"><a class="menu-text" href="/reservation/status">ReservationStatus</a></li>
                         @endcan
                         @else
                         <li class="menu-list"><a class="menu-text" href="/">Home</a></li>
@@ -53,4 +56,5 @@
         @yield('content')
     </main>
 </body>
+
 </html>

@@ -6,10 +6,14 @@
 
 @section('content')
 @if($shops->isEmpty())
-<div class="alert">検索結果はありませんでした</div>
+<div class="alert__content--error">検索結果はありませんでした</div>
 @endif
 <div class="alert__content">
-    @if (session('error'))
+    @if (session('result'))
+    <div class="alert__content--success">
+        {{ session('result') }}
+    </div>
+    @elseif (session('error'))
     <div class="alert__content--error">
         {{ session('error') }}
     </div>
@@ -35,6 +39,7 @@
                     <button class="detail-button" type="submit">詳しくみる</button>
                 </form>
             </div>
+            @can('user')
             <form action="{{ route('review_read', ['shop_id' => $shop->id]) }}" method="get">
                 @csrf
                 <div class="review-read">
@@ -60,6 +65,7 @@
                 <button class="favorite-button-notLogin" type="submit">❤</button>
                 <p class="tooltip">お気に入り</p>
             </form>
+            @endcan
             @endif
         </div>
     </div>

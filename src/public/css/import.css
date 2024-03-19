@@ -1,0 +1,116 @@
+.mypage__login-name {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.login-name,
+.title {
+    margin: 0px 0px 10px 0px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.alert__content {
+    height: 50px;
+}
+
+.alert__content--success {
+    height: 40px;
+    padding-top: 10px;
+    text-align: center;
+    border-color: #badbcc;
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.alert__content--error {
+    height: 40px;
+    padding-top: 10px;
+    text-align: center;
+    border-color: #f5c2c7;
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.import__content {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.import__content.open {
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.import__shop--registration {
+    margin: 0 auto;
+    width: 720px;
+    height: 400px;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.import__shop--title {
+    margin: 0 auto;
+    height: 50px;
+    width: 720px;
+    background-color: #345efd;
+    color: #fff;
+    font-size: 20px;
+    padding-left: 15px;
+    line-height: 50px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.import__shop--form {
+    height: 350px;
+    width: 720px;
+    background-color: #fff;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.form {
+    margin-left: 50px;
+}
+
+.form__text {
+    margin-top: 0px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.form__button {
+    margin-top: 30px;
+    margin-right: 50px;
+    text-align: right;
+}
+
+.form__button--submit {
+    width: 120px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #345efd;
+    cursor: pointer;
+}
+
+.form__button--text {
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+}
+
+.form__error {
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+    font-size: 15px;
+}

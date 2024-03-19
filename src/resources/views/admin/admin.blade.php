@@ -7,7 +7,7 @@
 @section('content')
 <div class="admin__login-name">
     <p class="login-name">{{ Auth::user()->name }}さん</p>
-    <p class="title">==店舗代表者登録画面==</p>
+    <p class="title">【店舗代表者登録画面】</p>
 </div>
 <div class="alert__content">
     @if (session('result'))

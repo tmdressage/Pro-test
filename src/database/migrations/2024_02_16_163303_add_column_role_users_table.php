@@ -12,7 +12,7 @@ class AddColumnRoleUsersTable extends Migration
      * @return void
      */
     public function up()
-    {
+    { 
         Schema::table('users', function (Blueprint $table) {
         //権限を作成するためにroleカラムを追加。デフォルトは0(一般ユーザ用)とする。
             $table->tinyInteger('role')->default(0)->after('password');

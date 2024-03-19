@@ -24,9 +24,21 @@
                 <nav>
                     <ul class="menu">
                         @if (Auth::check())
+                        @can('user')
                         <li class="menu-list"><a class="menu-text" href="/">Home</a></li>
                         <li class="menu-list"><a class="menu-text" href="/logout">Logout</a></li>
                         <li class="menu-list"><a class="menu-text" href="/mypage">Mypage</a></li>
+                        @elsecan('admin')
+                        <li class="menu-list"><a class="menu-text" href="/">Home</a></li>
+                        <li class="menu-list"><a class="menu-text" href="/logout">Logout</a></li>
+                        <li class="menu-list"><a class="menu-text" href="/admin">OwnerRegistration</a></li>
+                        <li class="menu-list"><a class="menu-text" href="/import">CsvImport</a></li>
+                        @elsecan('owner')
+                        <li class="menu-list"><a class="menu-text" href="/">Home</a></li>
+                        <li class="menu-list"><a class="menu-text" href="/logout">Logout</a></li>
+                        <li class="menu-list"><a class="menu-text" href="/owner">ShopRegistration</a></li>
+                        <li class="menu-list"><a class="menu-text" href="/reservation/status">ReservationStatus</a></li>
+                        @endcan
                         @else
                         <li class="menu-list"><a class="menu-text" href="/">Home</a></li>
                         <li class="menu-list"><a class="menu-text" href="/register">Registration</a></li>
@@ -38,9 +50,25 @@
             <h1 class="header__logo">
                 Rese
             </h1>
-            <div class="header__search">
-                <form class="header__search--box" action="/select" method="get">
-                    @csrf
+            <form class="header__search--form" action="/select" method="get">
+                @csrf
+                @canany(['user','admin'])
+                <div class="header__sort">
+                    <?php
+                    $select = isset($_GET['sort']) ? $_GET['sort'] : '';
+                    ?>
+                    <div class="sort">
+                        <P class="sort-text">並び替え：</P>
+                        <select class="select-sort" name="sort" onchange="this.form.submit()">
+                            <option value="" disabled selected style="display:none;">評価高/低</option>
+                            <option value="ランダム" <?= $select === 'ランダム' ? ' selected' : ''; ?>>ランダム</option>
+                            <option value="評価が高い順" <?= $select === '評価が高い順' ? ' selected' : ''; ?>>評価が高い順</option>
+                            <option value="評価が低い順" <?= $select === '評価が低い順' ? ' selected' : ''; ?>>評価が低い順</option>
+                        </select>
+                    </div>
+                </div>
+                @endcanany
+                <div class="header__search">
                     <?php
                     $select = isset($_GET['area']) ? $_GET['area'] : '';
                     ?>
@@ -72,12 +100,12 @@
                         <img class="icon-search" src="img/search.png" alt="Search">
                     </div>
                     <input class="search-text" type="text" name="keyword" value="{{$keyword}}" placeholder="Search ...">
-                </form>
-            </div>
+            </form>
         </div>
     </header>
     <main>
         @yield('content')
     </main>
 </body>
+
 </html>

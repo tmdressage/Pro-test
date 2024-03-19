@@ -21,6 +21,7 @@
 
 .title {
     margin: -3px 0px 10px 0px;
+    width: 700px;
     font-size: 24px;
     font-weight: bold;
     display: flex;
@@ -76,6 +77,8 @@
     border-radius: 8px;
     margin-bottom: 15px;
     overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .review-read-table {

@@ -11,7 +11,7 @@
 <div class="reservation-status__title">
     <button class="back-button" type="button" onclick="history.back()">＜
     </button>
-    <p class="title">==【{{ $ownerShop->shop_name }}】予約状況確認画面==</p>
+    <p class="title">【{{ $ownerShop->shop_name }}】予約状況確認画面</p>
 </div>
 <div class="reservation-status__content">
     <div class="reservation-status__content--title">

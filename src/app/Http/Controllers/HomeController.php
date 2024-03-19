@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -22,11 +23,25 @@ class HomeController extends Controller
 
     public function getSelect(Request $request)
     {
+        $sort = $request->input('sort');
         $area = $request->input('area');
         $genre = $request->input('genre');
         $keyword = $request->input('keyword');
 
         $query = Shop::query();
+
+        if ($sort == '評価が高い順') {
+            $query->leftjoin('ratings', 'ratings.shop_id', '=', 'shops.id')->select('shops.id', DB::raw('CEIL(AVG(rating) * 100) / 100 as average_rate'), 'shop_name', 'shop_img', 'shop_area', 'shop_genre')->groupBy('shops.id')->orderByRaw('average_rate IS NULL ASC')->orderByDesc('average_rate');
+
+        }
+
+        if ($sort == '評価が低い順') {
+            $query->leftjoin('ratings', 'ratings.shop_id', '=', 'shops.id')->select('shops.id', DB::raw('CEIL(AVG(rating) * 100) / 100 as average_rate'), 'shop_name', 'shop_img', 'shop_area', 'shop_genre')->groupBy('shops.id')->orderByRaw('average_rate IS NULL ASC')->orderBy('average_rate');
+        }
+
+        if ($sort == 'ランダム') {
+            $query->orderByRaw('RAND()');
+        }
 
         if (!empty($area)) {
             $query->where('shop_area', 'LIKE', $area);
@@ -42,6 +57,6 @@ class HomeController extends Controller
 
         $shops = $query->get();
 
-        return view('home', compact('shops', 'area', 'genre', 'keyword'));
+        return view('home', compact('shops', 'sort', 'area', 'genre', 'keyword'));
     }
 }

@@ -38,4 +38,16 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, Throwable $e)
+    {
+        if ($e instanceof CustomException) {
+           return redirect('import')->with(['empty' => $e->getMessage()], 500);
+        }
+
+        return parent::render($request, $e);
+    }
+
+
+
 }

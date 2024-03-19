@@ -45,23 +45,24 @@
                 <div class="reservation-detail">
                     <table class="reservation-table">
                         <tr>
-                            <td>Shop</td>
-                            <td>{{ $reservation->shop_name }}</td>
+                            <td class="column-space">Shop</td>
+                            <td class="column-space">{{ $reservation->shop_name }}</td>
                         </tr>
                         <tr>
-                            <td>Date</td>
-                            <td>{{ substr($reservation->reserve_datetime, 0, 10) }}</td>
+                            <td class="column-space">Date</td>
+                            <td class="column-space">{{ substr($reservation->reserve_datetime, 0, 10) }}</td>
                         </tr>
                         <tr>
-                            <td>Time</td>
-                            <td>{{ substr($reservation->reserve_datetime, 11, 5) }}</td>
+                            <td class="column-space">Time</td>
+                            <td class="column-space">{{ substr($reservation->reserve_datetime, 11, 5) }}</td>
                         </tr>
                         <tr>
-                            <td>Number</td>
-                            <td>{{ $reservation->reserve_number }}人</td>
+                            <td class="column-space">Number</td>
+                            <td class="column-space">{{ $reservation->reserve_number }}人</td>
                         </tr>
                     </table>
                 </div>
+
         </div>
         @else
         <div class="reservation-card">
@@ -82,20 +83,20 @@
             <div class="reservation-detail">
                 <table class="reservation-table">
                     <tr>
-                        <td>Shop</td>
-                        <td>{{ $reservation->shop_name }}</td>
+                        <td class="column-space">Shop</td>
+                        <td class="column-space">{{ $reservation->shop_name }}</td>
                     </tr>
                     <tr>
-                        <td>Date</td>
-                        <td>{{ substr($reservation->reserve_datetime, 0, 10) }}</td>
+                        <td class="column-space">Date</td>
+                        <td class="column-space">{{ substr($reservation->reserve_datetime, 0, 10) }}</td>
                     </tr>
                     <tr>
-                        <td>Time</td>
-                        <td>{{ substr($reservation->reserve_datetime, 11, 5) }}</td>
+                        <td class="column-space">Time</td>
+                        <td class="column-space">{{ substr($reservation->reserve_datetime, 11, 5) }}</td>
                     </tr>
                     <tr>
-                        <td>Number</td>
-                        <td>{{ $reservation->reserve_number }}人</td>
+                        <td class="column-space">Number</td>
+                        <td class="column-space">{{ $reservation->reserve_number }}人</td>
                     </tr>
                 </table>
             </div>

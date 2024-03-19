@@ -8,8 +8,7 @@
 <div class="detail__content">
     <div class="detail__shop">
         <div class="detail__shop-name">
-            <button class="back-button" type="button" onclick="history.back()">＜
-            </button>
+            <a class="back-button" href="/">＜</a>
             <div class="shop-name">
                 {{ $shop->shop_name }}
             </div>
@@ -22,6 +21,64 @@
             <p class="shop-genre">#{{ $shop->shop_genre }}</p>
         </div>
         <h3 class="detail__shop-text">#{{ $shop->shop_text }}</h3>
+        @if (Auth::check())
+        @can('user')
+        @if (isset($rating))
+        <div class="detail__shop-rating">
+            <form action="{{ route('rating_all', ['shop_id' => $shop->id]) }}" method="get">
+                @csrf
+                <input class="detail__shop-rating--all" type="submit" value="全ての口コミ情報">
+            </form>
+            <div class="detail__shop-rating--posted">
+                <div class="detail__shop-rating--edit">
+                    <form action="{{ route('edit', ['shop_id' => $shop->id]) }}" method="get">
+                        @csrf
+                        <input class="detail__shop-rating--change" type="submit" value="口コミを編集">
+                    </form>
+                    <form action="{{ route('delete', ['shop_id' => $shop->id]) }}" method="post">
+                        @csrf
+                        <input class="detail__shop-rating--delete" type="submit" value="口コミを削除">
+                    </form>
+                </div>
+                <div class="detail__shop-rating--view">
+                    @if ($rating->rating == 5)
+                    <p class="posted-rating">非常に満足です</p>
+                    <span class="posted-star">★★★★★</span>
+                    @elseif ($rating->rating == 4)
+                    <p class="posted-rating">大変満足です</p>
+                    <span class="posted-star">★★★★☆</span>
+                    @elseif ($rating->rating == 3)
+                    <p class="posted-rating">満足です</p>
+                    <span class="posted-star">★★★☆☆</span>
+                    @elseif ($rating->rating == 2)
+                    <p class="posted-rating">少し不満足です</p>
+                    <span class="posted-star">★★☆☆☆</span>
+                    @elseif ($rating->rating == 1)
+                    <p class="posted-rating">不満足です</p>
+                    <span class="posted-star">★☆☆☆☆</span>
+                    @endif
+                    @if (isset($rating->text))
+                    <p class="posted-text">{{ $rating->text }}</p>
+                    @endif
+                    @if (isset($rating->image))
+                    <img class="posted-image" src="{{ asset($rating->image) }}" alt="image">
+                    @endif
+                </div>
+            </div>
+        </div>
+        @else
+        <form action="{{ route('rating', ['shop_id' => $shop->id]) }}" method="get">
+            @csrf
+            <input class="detail__shop-rating--post" type="submit" value="口コミを投稿する">
+        </form>
+        @endif
+        @elsecan('admin')
+        <form action="{{ route('rating_all', ['shop_id' => $shop->id]) }}" method="get">
+            @csrf
+            <input class="detail__shop-rating--all" type="submit" value="全ての口コミ情報">
+        </form>
+        @endcan
+        @endif
     </div>
     <div class="detail__reservation">
         <div class="detail__reservation--content">
@@ -200,10 +257,25 @@
                         </tr>
                     </table>
                 </div>
+                @if (Auth::check())
+                @can('user')
                 <div class="detail__reservation-button">
                     <button class="reservation-button" type="submit">予約する
                     </button>
                 </div>
+                @endcan
+                @canany(['admin','owner'])
+                <div class="detail__reservation-button">
+                    <p class="not-reservation-button">! このユーザ権限では予約機能を利用できません
+                    </p>
+                </div>
+                @endcanany
+                @else
+                <div class="detail__reservation-button">
+                    <button class="reservation-button" type="submit">予約する
+                    </button>
+                </div>
+                @endif
             </form>
         </div>
     </div>

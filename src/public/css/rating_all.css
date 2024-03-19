@@ -1,0 +1,134 @@
+.rating-all__title {
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.back-button {
+    height: 25px;
+    width: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    color: gray;
+    text-align: center;
+    padding-top: 2px;
+    padding-right: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.title {
+    margin: -3px 0px 10px 0px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.rating-all__content {
+    margin: 0 auto;
+    padding: 25px 25px 25px 0px;
+    height: 550px;
+    width: 700px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.rating-all__content.open {
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.empty-alert {
+    width: 700px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    display: flex;
+    justify-content: center;
+}
+
+.rating-all__content--average {
+    width: 700px;
+    margin: 0 auto;
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.average {
+    margin-top: 0px;
+    font-size: 25px;
+    color: #345efd;
+}
+
+.rating-all__content--rating {
+    height: 400px;
+    width: 700px;
+    border-radius: 8px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.rating-all__shop-rating--posted {
+    margin: 0 auto;
+    width: 700px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 5px 10px 5px 10px;
+
+}
+
+.rating-all__shop-rating--edit {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.rating-all__shop-rating--delete,
+.rating-all__shop-rating--change {
+    font-family: Meiryo;
+    font-weight: bold;
+    font-size: 14px;
+    color: black;
+    border: none;
+    background-color: #f2f2f2;
+    cursor: pointer;
+    text-decoration: underline solid black;
+    padding-right: 15px;
+}
+
+.posted-rating {
+    margin: 0;
+    font-weight: bold;
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+.posted-star {
+    margin: 0;
+    padding-left: 10px;
+    font-size: 25px;
+    color: #345efd;
+}
+
+
+.posted-text {
+    margin: 5px 0px 5px 0px;
+    padding-left: 12px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+.posted-image {
+    padding-left: 20px;
+    max-width: 200px;
+    max-height: 200px;
+}

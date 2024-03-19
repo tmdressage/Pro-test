@@ -1,32 +1,35 @@
 .detail__content {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1240px;
     display: flex;
     flex-direction: row;
 }
 
 .detail__shop {
-    margin: 0 auto;
-    padding-top: 15px;
     height: 600px;
-    width: 600px;
+    width: 620px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .detail__shop-name {
     display: flex;
     height: 70px;
+    margin-left: 20px;
     align-items: center;
+    width: 535px;
 }
 
 .back-button {
+    text-decoration: none;
     height: 25px;
     width: 25px;
     font-size: 14px;
     font-weight: bold;
     color: gray;
     text-align: center;
-    padding-top: 2px;
-    padding-right: 10px;
+    padding-top: 3px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 2px 2px 5px gray;
@@ -36,15 +39,20 @@
     margin: 5px 0px 0px 10px;
     font-size: 20px;
     font-weight: bold;
+    white-space: wrap;
+    width: 510px;
+
 }
 
 .detail__shop-img img {
+    margin-left: 20px;
     width: 530px;
     height: 350px;
 }
 
 .detail__shop-tag {
     margin-top: 10px;
+    margin-left: 20px;
     font-size: 15px;
     font-weight: bold;
 }
@@ -62,6 +70,90 @@
     font-size: 15px;
     font-weight: bold;
     margin-top: 10px;
+    margin-left: 20px;
+}
+
+.detail__shop-rating {
+    margin-top: 60px;
+    width: 570px;
+}
+
+.detail__shop-rating--all {
+    background-color: #345efd;
+    margin-bottom: 20px;
+    height: 35px;
+    width: 570px;
+    border: none;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 16px;
+
+}
+
+.detail__shop-rating--posted {
+    width: 570px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 5px 0px 5px 0px;
+}
+
+.detail__shop-rating--edit {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.detail__shop-rating--delete,
+.detail__shop-rating--change {
+    font-family: Meiryo;
+    font-weight: bold;
+    font-size: 14px;
+    color: black;
+    border: none;
+    background-color: #f2f2f2;
+    cursor: pointer;
+    text-decoration: underline solid black;
+    padding-right: 15px;
+}
+
+.posted-rating {
+    margin: 0;
+    font-weight: bold;
+    padding-left: 30px;
+    font-size: 15px;
+}
+
+.posted-star {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 25px;
+    color: #345efd;
+}
+
+.posted-text {
+    margin: 5px 0px 5px 0px;
+    padding-left: 22px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.posted-image {
+    padding-left: 20px;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.detail__shop-rating--post {
+    font-family: Meiryo;
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+    border: none;
+    margin: -5px 0px 0px -6px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+    text-decoration: underline solid black;
+    margin-left: 14px;
 }
 
 .detail__reservation {
@@ -153,7 +245,7 @@
 
 .reservation-output {
     margin-top: 10px;
-    height: 140px;
+    height: 150px;
     width: 440px;
     padding: 20px;
     background-color: #4f7ffd;
@@ -169,6 +261,8 @@
 
 .column-space {
     width: 50px;
+    overflow: hidden;
+
 }
 
 .detail__reservation-button {
@@ -185,6 +279,20 @@
     height: 40px;
     width: 550px;
     border-radius: 0px 0px 8px 8px;
+}
+
+.not-reservation-button {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    background-color: #153afd;
+    text-align: center;
+    font-size: 15px;
+    height: 40px;
+    width: 550px;
+    border-radius: 0px 0px 8px 8px;
+    line-height: 40px;
+    margin-bottom: 0;
 }
 
 .select-time {

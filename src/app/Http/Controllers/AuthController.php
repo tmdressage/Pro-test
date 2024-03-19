@@ -28,6 +28,7 @@ class AuthController extends Controller
             } else {
                 return redirect('mypage')->with('result', 'ログインしました');
             }
+
         } else {
             return redirect('login')->with('error', 'メールアドレスまたはパスワードが間違っています');
         }

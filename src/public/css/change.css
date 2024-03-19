@@ -3,19 +3,22 @@
     max-width: 1200px;
     display: flex;
     flex-direction: row;
-}
+} 
 
 .change__shop {
     margin: 0 auto;
-    padding-top: 15px;
     height: 600px;
     width: 600px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .change__shop-name {
     display: flex;
     height: 70px;
     align-items: center;
+        width: 535px;
 }
 
 .back-button {
@@ -35,7 +38,9 @@
 .shop-name {
     margin: 5px 0px 0px 10px;
     font-size: 20px;
-    font-weight: bold;
+        font-weight: bold;
+            white-space: wrap;
+            width: 510px;
 }
 
 .change__shop-img img {
@@ -153,7 +158,7 @@
 
 .reservation-output {
     margin-top: 10px;
-    height: 140px;
+    height: 150px;
     width: 440px;
     padding: 20px;
     background-color: #4f7ffd;
@@ -169,6 +174,7 @@
 
 .column-space {
     width: 50px;
+        overflow: hidden;
 }
 
 .change__reservation-button {

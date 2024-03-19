@@ -7,15 +7,18 @@
 
 .review__shop {
     margin: 0 auto;
-    padding-top: 15px;
     height: 600px;
     width: 600px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .review__shop-name {
     display: flex;
     height: 70px;
     align-items: center;
+    width: 535px;
 }
 
 .back-button {
@@ -101,7 +104,7 @@
 }
 
 .reservation-history {
-    height: 150px;
+    height: 165px;
     width: 500px;
     padding: 15px;
     background-color: #4f7ffd;
@@ -188,11 +191,11 @@
     color: #ffcc00;
 }
 
-.rate-form label:hover ~ label {
+.rate-form label:hover~label {
     color: #ffcc00;
 }
 
-.rate-form input[type="radio"]:checked ~ label {
+.rate-form input[type="radio"]:checked~label {
     color: #ffcc00;
 }
 

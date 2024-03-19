@@ -24,26 +24,26 @@ class OwnerRequest extends FormRequest
     public function rules()
     {
         return [
-            'shop_name' => ['required', 'string', 'max:12'],
+            'shop_name' => ['required', 'string', 'max:50'],
             'shop_img' => ['required'],
             'shop_area' => ['required'],
             'shop_genre' => ['required'],
-            'shop_text' => ['required', 'string', 'max:180'],
+            'shop_text' => ['required', 'string', 'max:400'],
         ];
     }
 
     public function messages()
     {
         return [
-            'shop_name.required' => '! 飲食店名を入力してください。',
-            'shop_name.string' => '! 飲食店名を文字列で入力してください。',
-            'shop_name.max' => '! 飲食店名を12文字以内で入力してください。',
+            'shop_name.required' => '! 店舗名を入力してください。',
+            'shop_name.string' => '! 店舗名を文字列で入力してください。',
+            'shop_name.max' => '! 店舗名を50文字以内で入力してください。',
             'shop_img.required' => '! 画像をアップロードしてください。',
             'shop_area.required' => '! エリアを入力してください。',
             'shop_genre.required' => '! ジャンルを入力してください。',
-            'shop_text.required' => '! 紹介文を入力してください。',
-            'shop_text.string' => '! 紹介文を文字列で入力してください。',
-            'shop_text.max' => '! 紹介文を180文字以内で入力してください。',
+            'shop_text.required' => '! 店舗概要を入力してください。',
+            'shop_text.string' => '! 店舗概要を文字列で入力してください。',
+            'shop_text.max' => '! 店舗概要を400文字以内で入力してください。',
 
         ];
     }

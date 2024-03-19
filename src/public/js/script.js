@@ -1,7 +1,7 @@
 $(function () {
     $(".header__menu--button").on("click", function () {
         $(
-            ".menu, .header__menu--button, .header__menu--button-line,.review-read-button, .favorite-button, .tooltip, .detail__reservation, .change__reservation, .review__reservation,.review-read__content, .reservation-content, .owner__content, .reservation-status__content"
+            ".menu, .header__menu--button, .header__menu--button-line,.review-read-button, .favorite-button, .tooltip, .detail__reservation, .change__reservation, .review__reservation,.review-read__content, .reservation-content, .owner__content, .reservation-status__content, .rating__form,.rating-all__content"
         ).toggleClass("open");
     });
 });
@@ -145,3 +145,36 @@ $(function () {
         console.log(result);
     });
 });
+
+$(function(){
+  $('#count').keyup(function(){
+    var count = $(this).val().length;
+    $('.show-count').text(count);
+  });
+});
+
+$(document).on("change", ".image-wrapper", function () {
+    let elem = this; 
+    let fileReader = new FileReader(); 
+    fileReader.readAsDataURL(elem.files[0]); 
+    fileReader.onload = function () {
+        let imgTag = `<img src='${fileReader.result}'>`; 
+        $(elem).nextAll(".preview").html(imgTag); 
+    };
+});
+
+$(function() {
+   var count = 13;
+ $('.column-space').each(function() {
+     var thisText = $(this).text();
+      var textLength = thisText.length;
+       if (textLength > count) {
+          var showText = thisText.substring(0, count);
+          var insertText = showText += '…';
+          $(this).html(insertText);
+      };
+  });
+});
+
+
+

@@ -46,6 +46,12 @@
     width: 500px;
 }
 
+.column-space {
+    width: 50px;
+    overflow: hidden;
+
+}
+
 .mypage__reservation--text {
     margin: 10px 0px 15px 0px;
     text-align: left;
@@ -242,6 +248,9 @@
     font-weight: bold;
     margin-top: 5px;
     margin-bottom: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card-tag {
@@ -288,8 +297,8 @@
 }
 
 .review-read-button {
-    font-size: 43px;
-    margin-top: -16px;
+    font-size: 41px;
+    margin-top: -13.5px;
     -webkit-text-stroke: 0.5px rgb(244, 232, 11);
     color: rgb(255, 255, 161);
 }

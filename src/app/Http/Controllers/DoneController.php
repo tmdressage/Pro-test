@@ -11,6 +11,6 @@ class DoneController extends Controller
 
     public function postDone()
     {
-        return redirect('mypage');
+        return redirect('/');
     }
 }

@@ -2,6 +2,15 @@
     height: 50px;
 }
 
+.alert__content--success {
+    height: 40px;
+    padding-top: 10px;
+    text-align: center;
+    border-color: #badbcc;
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
 .alert__content--error {
     height: 40px;
     padding-top: 10px;
@@ -45,6 +54,9 @@
     font-weight: bold;
     margin-top: 5px;
     margin-bottom: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .shop-tag {
@@ -91,8 +103,8 @@
 }
 
 .review-read-button {
-    font-size: 43px;
-    margin-top: -16px;
+    font-size: 41px;
+    margin-top: -13.5px;
     -webkit-text-stroke: 0.5px rgb(244, 232, 11);
     color: rgb(255, 255, 161);
 }
