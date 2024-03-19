@@ -52,7 +52,7 @@
             </h1>
             <form class="header__search--form" action="/select" method="get">
                 @csrf
-                @canany(['user','admin'])
+                @can('user')
                 <div class="header__sort">
                     <?php
                     $select = isset($_GET['sort']) ? $_GET['sort'] : '';
@@ -67,7 +67,7 @@
                         </select>
                     </div>
                 </div>
-                @endcanany
+                @endcan
                 <div class="header__search">
                     <?php
                     $select = isset($_GET['area']) ? $_GET['area'] : '';
