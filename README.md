@@ -18,13 +18,13 @@ http://localhost:8080/
 
 ## 他のリポジトリ  
 他の機能に関しましては、上級模擬案件提出用のリポジトリ「Rese」のREADMEに記載がございます。
-[(https://github.com/tmdressage/rese.git)](https://github.com/tmdressage/rese.git)
+[https://github.com/tmdressage/rese.git](https://github.com/tmdressage/rese.git)
 
 ## 機能一覧
 **Proテスト用の追加実装機能**<br>
-・口コミ機能<br>
-・店舗一覧ソート機能<br>
-・csvインポート機能<br>
+口コミ機能<br>
+店舗一覧ソート機能<br>
+csvインポート機能<br>
 
   
 ## 使用技術（実行環境）
@@ -37,13 +37,14 @@ WEBサーバソフトウェア：nginx 1.21.1<br>
 エディタ：VSCode 1.84.0<br>
 
 ## テーブル設計
-![Screenshot 2024-03-19 225159](https://github.com/tmdressage/Pro-test/assets/144135026/0fcd04cc-40f0-4222-9a6e-59477a1f4f2f)
-※大変恐縮ながら、上級模擬案件の採点でご指摘を受けた箇所はまだ修正出来ておりません。
-※Reviewsテーブルは上級模擬案件で実装した際に使用したテーブルで、今回はそれとは別にRatingテーブルを作成して機能を実装いたしました。
+![Screenshot 2024-03-19 225159](https://github.com/tmdressage/Pro-test/assets/144135026/0fcd04cc-40f0-4222-9a6e-59477a1f4f2f)<br>
+※大変恐縮ながら、上級模擬案件の採点でご指摘を受けた箇所はまだ修正出来ておりません。<br>
+※Reviewsテーブルは上級模擬案件で実装した際に使用したテーブルで、<br>
+　今回はそれとは別にRatingテーブルを作成して機能を実装いたしました。<br>
 
 ## ER図
-![rese](https://github.com/tmdressage/Pro-test/assets/144135026/728e3a08-3885-4fed-bb37-9369ec9b100c)
-※大変恐縮ながら、上級模擬案件の採点でご指摘を受けた箇所はまだ修正出来ておりません。
+![rese](https://github.com/tmdressage/Pro-test/assets/144135026/728e3a08-3885-4fed-bb37-9369ec9b100c)<br>
+※大変恐縮ながら、上級模擬案件の採点でご指摘を受けた箇所はまだ修正出来ておりません。<br>
 
 ## 環境構築
 **1、リポジトリの設定**<br>
@@ -230,7 +231,7 @@ $ exit
 ※飲食店情報の新規作成時に、アップロードした画像を表示させるために行います。
 <br>
 <br>
-※2024/3/19追記※<br>
+**2024/3/19追記※**
 CSVインポート機能実装の為にLaravelExcelをインストールしたところ、<br>
 PHPのバージョンが合わないのでアップデートしてほしい旨のエラーが出るようになりましたので、<br>
 docker/php/Dockerfileのphpバージョンを7.4.9から8.1.0に変更して<br>
@@ -281,12 +282,13 @@ Permission denied」<br>
 ![Screenshot 2024-03-19 215750](https://github.com/tmdressage/Pro-test/assets/144135026/b837b0a4-54df-4d89-9753-9ba6b92d988b)<br>
 <br>
 <br>
-⇒csvファイルの記述方法は以下をご参照ください。<br>
+⇒csvファイルの記述方法を以下に記述いたします。<br>
 <br>
 ![Screenshot 2024-03-19 222834](https://github.com/tmdressage/Pro-test/assets/144135026/11cd91c5-338b-41c8-9973-5e0a48143efa)<br>
 <br>
 １． 空のSCVファイルを開き、1行目にヘッダー行を作成します。<br>
-　　 1行目のA～E列に、それぞれ「店舗名」、「画像URL」、「地域」、「ジャンル」、「店舗概要」と入力します。<br>
+　　 1行目のA～E列に、それぞれ「店舗名」、「画像URL」、「地域」、「ジャンル」、<br>
+    「店舗概要」と入力します。<br>
 　 　※上記の通りでなくとも、各項目が分かるような項目名であればOKです。<br>
 　 　※1行目はヘッダー行のためインポート時には読み取られません。<br>
 <br>
@@ -299,7 +301,8 @@ Permission denied」<br>
 　    E列「店舗概要」：400文字以内で入力<br>
 　　※各項目は全て必須項目です。いずれかに空欄があると読み取られません。<br>
 <br>
-⇒必要事項を入力・上書き保存したSCVファイルを、先述のインポート画面にインポートいただくと、飲食店情報が新規作成されます。
+⇒必要事項を入力・上書き保存したSCVファイルを、先述のインポート画面にインポートいただくと、<br>
+　飲食店情報が新規作成されます。<br>
 <br>
 <br>
 以上でございます。<br>
