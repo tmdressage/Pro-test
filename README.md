@@ -39,12 +39,14 @@ WEBサーバソフトウェア：nginx 1.21.1<br>
 ## テーブル設計
 ![Screenshot 2024-03-19 225159](https://github.com/tmdressage/Pro-test/assets/144135026/0fcd04cc-40f0-4222-9a6e-59477a1f4f2f)<br>
 ※大変恐縮ながら、上級模擬案件の採点でご指摘を受けた箇所はまだ修正出来ておりません。<br>
-※Reviewsテーブルは上級模擬案件で実装した際に使用したテーブルで、<br>
+※Reviewsテーブルは上級模擬案件で評価機能を実装した際に使用したテーブルで、<br>
 　今回はそれとは別にRatingテーブルを作成して機能を実装いたしました。<br>
 
 ## ER図
-![rese](https://github.com/tmdressage/Pro-test/assets/144135026/728e3a08-3885-4fed-bb37-9369ec9b100c)<br>
+![rese](https://github.com/tmdressage/Pro-test/assets/144135026/51c27918-4236-4b25-aa9c-531e7a61816c)<br>
 ※大変恐縮ながら、上級模擬案件の採点でご指摘を受けた箇所はまだ修正出来ておりません。<br>
+※Reviewsテーブルは上級模擬案件で評価機能を実装した際に使用したテーブルで、<br>
+　今回はそれとは別にRatingテーブルを作成して機能を実装いたしました。<br>
 
 ## 環境構築
 **1、リポジトリの設定**<br>
